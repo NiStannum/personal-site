@@ -6,14 +6,14 @@ const experience = [
     role: "Product Manager",
     location: "Santa Clara",
     dates: "2023–now",
-    note: "Working on onboarding, subscriptions, and the training surface itself for an app used by ten million lifters.",
+    note: "Leading product from subscriptions to the core app experience.",
   },
   {
     company: "Quora",
     role: "Product Manager",
     location: "Mountain View",
     dates: "2021–2023",
-    note: "PM on Quora+, the consumer subscription. Owned pricing, checkout, and creator earnings.",
+    note: "Worked on Quora+ across growth, pricing, checkout, and creator payouts.",
   },
   {
     company: "HCL Technologies",
