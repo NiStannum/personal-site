@@ -20,7 +20,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("https://nitin-bansal.com"),
   title: "Nitin Bansal",
   description:
     "Product manager at JEFIT, a fitness app used by over ten million lifters. Before that, Quora.",

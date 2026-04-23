@@ -5,21 +5,21 @@ const experience = [
     company: "JEFIT",
     role: "Product Manager",
     location: "Santa Clara",
-    dates: "2023 — now",
-    note: "Solo PM on a fitness app used by over ten million lifters. Working across onboarding, subscriptions, and the core training surface.",
+    dates: "2023–now",
+    note: "Working on onboarding, subscriptions, and the training surface itself for an app used by ten million lifters.",
   },
   {
     company: "Quora",
     role: "Product Manager",
     location: "Mountain View",
-    dates: "2021 — 2023",
-    note: "Product manager on Quora+, the company's consumer subscription. Pricing, checkout, and creator earnings.",
+    dates: "2021–2023",
+    note: "PM on Quora+, the consumer subscription. Owned pricing, checkout, and creator earnings.",
   },
   {
     company: "HCL Technologies",
     role: "Lead Engineer",
     location: "Bangalore",
-    dates: "2014 — 2019",
+    dates: "2014–2019",
     note: "Flight management software for commercial aircraft. Led a small team on testing and airworthiness.",
   },
 ];
@@ -29,13 +29,13 @@ const shipped = [
     title: "Adaptive Plan",
     org: "JEFIT",
     blurb:
-      "An AI coach that replans your training each week based on strength and recovery.",
+      "A coach that rewrites your training each week based on how you're lifting and recovering.",
     href: "https://www.jefit.com/ai-workout-tracker/adaptive-plan",
   },
   {
     title: "Year in Review",
     org: "JEFIT",
-    blurb: "An annual training recap matched to a character lifters can share.",
+    blurb: "A yearly training recap paired with a character, built to be shared.",
     href: "https://www.jefit.com/wp/jefit-news-product-updates/jefit-year-in-review-2025-a-look-back-at-your-strength-journey/",
   },
   {
@@ -47,7 +47,7 @@ const shipped = [
   {
     title: "Creator earnings dashboard",
     org: "Quora+",
-    blurb: "A view of where a creator's subscription revenue actually came from.",
+    blurb: "Shows creators where their subscription revenue actually came from.",
     href: "https://productupdates.quora.com/Earnings-stats-and-controls-added-to-Your-content-and-stats",
   },
 ];
@@ -56,9 +56,12 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-[38rem] px-6 pt-24 pb-24 sm:pt-32 sm:pb-32">
       <section className="mb-20 sm:mb-24">
+        <p className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] mb-6">
+          Nitin Bansal
+        </p>
         <h1 className="display text-[2.6rem] sm:text-[3.25rem] leading-[1.04] tracking-[-0.02em]">
           Product manager at JEFIT, a fitness app used by over ten million
-          lifters. Before that, Quora.
+          lifters. Previously at Quora.
         </h1>
       </section>
 
@@ -88,26 +91,26 @@ export default function Home() {
           {shipped.map((item) => (
             <li key={item.title} className="py-5">
               <div className="flex items-baseline justify-between gap-6 mb-1">
-                <h3 className="display text-2xl">
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="border-b border-transparent hover:border-[color:var(--color-ink)] no-underline"
-                    >
-                      {item.title}
-                    </a>
-                  ) : (
-                    <span>{item.title}</span>
-                  )}
-                </h3>
+                <h3 className="display text-2xl">{item.title}</h3>
                 <span className="font-mono text-xs text-[color:var(--color-ink-subtle)] shrink-0">
                   {item.org}
                 </span>
               </div>
               <p className="text-[color:var(--color-ink-muted)] leading-snug">
                 {item.blurb}
+                {item.href && (
+                  <>
+                    {" "}
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="whitespace-nowrap"
+                    >
+                      Learn more →
+                    </a>
+                  </>
+                )}
               </p>
             </li>
           ))}
@@ -132,7 +135,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-[color:var(--color-ink-muted)] leading-snug">
-                On the perils of maximizing revenue over user experience.
+                What happens when you push revenue past the point users will bear.
               </p>
             </Link>
           </li>
