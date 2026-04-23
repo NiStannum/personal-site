@@ -1,0 +1,115 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Analyzing the Laffer Curve's Relevance in Product Strategies — Nitin Bansal",
+  description: "Perils of maximizing revenue over user experience.",
+};
+
+<nav className="mb-12">
+  <Link
+    href="/writing"
+    className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] no-underline hover:text-[color:var(--color-ink)]"
+  >
+    ← Writing
+  </Link>
+</nav>
+
+<header className="mb-14">
+  <p className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] mb-5">
+    September 14, 2023
+  </p>
+  <h1 className="display text-[2.5rem] sm:text-[3rem] leading-[1.04] tracking-[-0.02em]">
+    Analyzing the Laffer Curve&rsquo;s Relevance in Product Strategies
+  </h1>
+  <p className="mt-5 text-xl leading-snug text-[color:var(--color-ink-muted)]">
+    Perils of maximizing revenue over user experience.
+  </p>
+</header>
+
+<figure className="my-10 -mx-6 sm:mx-0">
+  <Image
+    src="/writing/laffer/hero.png"
+    alt="The classic Laffer Curve: tax rate on the x-axis, government revenue on the y-axis, forming an inverted U."
+    width={2172}
+    height={1841}
+    className="w-full h-auto"
+    priority
+  />
+</figure>
+
+<div className="prose">
+
+<p className="drop-cap">Recently, I came across the Laffer curve, named after the economist Arthur Laffer, who used it to depict the nonlinear relationship between Tax Rate and Government Revenue. According to him, when a government starts increasing the Tax Rate on its citizens, the money in its coffers (government revenue) only grows to a certain point. After this, any additional increase in Tax Rates only lowers government revenue, as higher tax rates discourage economic activity, i.e., when taxes are too high, people may work less, invest less, or engage in tax evasion to avoid paying taxes. As a result, the overall tax base may shrink, leading to lower tax revenue despite higher tax rates. Conversely, reducing tax rates from a very high level may stimulate economic activity, incentivizing people and businesses to work more, invest more, and report income more honestly. This can lead to increased tax revenue even though tax rates have been lowered.</p>
+
+This made me wonder if the curve could apply to other variables in our lives; I think it does!
+
+## Applying the Laffer Curve to Ad-Driven Products
+
+Many products today have been pushing an increasing number of ads to their users to increase company revenue; there could be an inflection point where pushing more ads will result in lower company revenue due to lower user engagement or a loss of users to products with better UX (more on this later).
+
+</div>
+
+<figure className="my-10 -mx-6 sm:mx-0">
+  <Image
+    src="/writing/laffer/ad-driven.png"
+    alt="Laffer Curve applied to ad-driven products: number of ads on the x-axis, company revenue on the y-axis."
+    width={2177}
+    height={1837}
+    className="w-full h-auto"
+  />
+</figure>
+
+<div className="prose">
+
+## Applying the Laffer Curve to Subscription Products
+
+Many subscription products have increased prices (Disney, Netflix, Spotify) to increase revenue. I cannot help but think that the Laffer Curve also applies to these products, and each price increase will take the company revenue closer to maxima or a lower point beyond it.
+
+</div>
+
+<figure className="my-10 -mx-6 sm:mx-0">
+  <Image
+    src="/writing/laffer/subscription.png"
+    alt="Laffer Curve applied to subscription products: subscription price on the x-axis, company revenue on the y-axis."
+    width={2148}
+    height={1861}
+    className="w-full h-auto"
+  />
+</figure>
+
+<div className="prose">
+
+## Disruption of Traditional TV with Netflix (a real-life example of the Laffer Curve?)
+
+Before Netflix took over our screens, the duo of Networks (ABC, NBC, Fox, etc.) and Cable providers (AT&T, Comcast, etc.) reigned supreme. However, in an attempt to grow revenue, both time spent showing you ads and cable prices kept increasing. This led to a point where viewers jumped to a product (Netflix) that was cheaper ($8.28 vs. $416.14 in 2014) and provided an uninterrupted viewing experience—leading to a wave of cord-cutting and a steady migration of viewers from traditional TV to Netflix. If you plot this transition from the point of view of Networks and Cable providers, the graph will look like a Laffer Curve!
+
+</div>
+
+<figure className="my-10 -mx-6 sm:mx-0">
+  <Image
+    src="/writing/laffer/tv-netflix.png"
+    alt="Laffer Curve applied to traditional TV vs. Netflix: as ads and cable prices rose, viewership fell and revenue followed."
+    width={1975}
+    height={2024}
+    className="w-full h-auto"
+  />
+</figure>
+
+<div className="prose">
+
+Are there any other examples you can think of that follow the Laffer Curve?
+
+</div>
+
+<footer className="mt-16 pt-8 border-t border-[color:var(--color-rule)] text-[color:var(--color-ink-muted)] text-sm">
+  Originally published on{" "}
+  <a
+    href="https://nitinbansal.substack.com/p/analyzing-the-laffer-curves-relevance"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Substack
+  </a>
+  .
+</footer>
