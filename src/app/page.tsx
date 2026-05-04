@@ -29,7 +29,7 @@ const personalProjects = [
     title: "Kinai",
     tagline: "AI companion pet",
     blurb:
-      "An iOS app where a small companion responds to how you're doing — built solo across product, design, and Swift.",
+      "An iOS app where a small companion responds to how you're doing. Built solo across product, design, and Swift.",
     href: "/projects/kinai",
     year: "2026",
   },

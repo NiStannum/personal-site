@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Kinai — Nitin Bansal",
   description:
-    "Kinai is an iOS companion app where a small pet responds to how you're doing. Built solo across product, design, and Swift.",
+    "Kinai is an iOS companion app where a small pet responds to how you're doing. A solo project covering product, design, and Swift.",
 };
 
 const screenshots = [
@@ -25,18 +25,18 @@ export default function KinaiProjectPage() {
         <Link href="/">← Nitin Bansal</Link>
       </p>
 
-      <header className="mb-12">
-        <h1 className="display text-[2.4rem] sm:text-[3rem] leading-[1.05] tracking-[-0.02em] mb-4">
+      <header className="mb-14">
+        <h1 className="display text-[2.4rem] sm:text-[3rem] leading-[1.05] tracking-[-0.02em] mb-3">
           Kinai
         </h1>
         <p className="font-mono text-xs uppercase tracking-[0.12em] text-[color:var(--color-ink-muted)] mb-6">
           Personal project · iOS · 2026
         </p>
         <p className="text-lg leading-snug text-[color:var(--color-ink-muted)]">
-          A small AI companion that lives on your phone and responds to how
-          you&rsquo;re doing. I built Kinai solo — product, design, and Swift —
-          to explore what an emotionally aware app looks like when the
-          interface is a character, not a dashboard.
+          Kinai is an iOS app I built on my own. The whole interface is a small
+          companion who reacts to how you&rsquo;re doing. I wanted to see what
+          a wellness app feels like when the interface is a character instead
+          of a dashboard.
         </p>
       </header>
 
@@ -44,32 +44,36 @@ export default function KinaiProjectPage() {
         <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] mb-6">
           Demo
         </h2>
-        <video
-          src="/projects/kinai/demo.mp4"
-          controls
-          playsInline
-          muted
-          loop
-          autoPlay
-          className="w-full rounded-lg border border-[color:var(--color-rule)]"
-        />
+        <div className="mx-auto w-full max-w-[260px]">
+          <video
+            src="/projects/kinai/demo.mp4"
+            controls
+            playsInline
+            muted
+            loop
+            autoPlay
+            className="w-full rounded-[28px] border border-[color:var(--color-rule)] shadow-sm"
+          />
+        </div>
       </section>
 
       <section className="mb-14">
         <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] mb-6">
           Screens
         </h2>
-        <div className="grid grid-cols-2 gap-4">
-          {screenshots.map((shot) => (
-            <Image
-              key={shot.src}
-              src={shot.src}
-              alt={shot.alt}
-              width={585}
-              height={1266}
-              className="w-full rounded-lg border border-[color:var(--color-rule)]"
-            />
-          ))}
+        <div className="-mx-6 px-6 overflow-x-auto">
+          <div className="flex gap-3 pb-2">
+            {screenshots.map((shot) => (
+              <Image
+                key={shot.src}
+                src={shot.src}
+                alt={shot.alt}
+                width={585}
+                height={1266}
+                className="h-[300px] w-auto rounded-[18px] border border-[color:var(--color-rule)] shrink-0"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -79,18 +83,17 @@ export default function KinaiProjectPage() {
         </h2>
         <ul className="space-y-3 text-[color:var(--color-ink-muted)] leading-snug">
           <li>
-            Kin&rsquo;s emotional state is driven by an LLM that classifies
-            each conversation turn into one of twelve states, then renders the
-            matching sprite and ambient mood.
+            Kin has twelve emotional states. An LLM picks one based on the
+            conversation, and the sprite plus background mood update to match.
           </li>
           <li>
-            Sprites were generated with Imagen 4 for the hero pose and Gemini
-            Flash for consistent variants — same character, different
-            expressions.
+            I drew the hero sprite with Imagen 4, then used Gemini Flash with
+            that hero as a reference so the character stays the same across
+            different expressions.
           </li>
           <li>
-            The home is the conversation. There are no dashboards or numbers —
-            the user&rsquo;s wellness shows up as Kin&rsquo;s world.
+            The home screen is just the chat. No dashboards, no numbers. Your
+            wellness shows up as the weather around Kin.
           </li>
         </ul>
       </section>
