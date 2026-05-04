@@ -5,14 +5,34 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Kinai — Nitin Bansal",
   description:
-    "Kinai is an iOS companion app where a small pet responds to how you're doing. A solo project covering product, design, and Swift.",
+    "Kinai is a self-care companion app I built solo. A soft alternative to streak-based wellness apps.",
 };
 
-const screenshots = [
-  { src: "/projects/kinai/sc1.png", alt: "Kinai onboarding" },
-  { src: "/projects/kinai/sc2.png", alt: "Kinai chatting with the user" },
-  { src: "/projects/kinai/sc3.png", alt: "Kinai responding to user mood" },
-  { src: "/projects/kinai/sc4.png", alt: "Kinai companion in a calm state" },
+const features = [
+  {
+    src: "/projects/kinai/sc1.png",
+    title: "A quiet daily check-in",
+    body:
+      "Three taps, no journaling required. A way to notice how you're doing without anyone asking why.",
+  },
+  {
+    src: "/projects/kinai/sc2.png",
+    title: "Tiny quests, no streaks",
+    body:
+      "A short list of doable things: a 5-minute walk, phone in another room, texting someone who gets you. Pick what fits the day, skip the rest. Nothing breaks if you do.",
+  },
+  {
+    src: "/projects/kinai/sc3.png",
+    title: "Reasons, not rules",
+    body:
+      "Each quest comes with a small note explaining why it might help, in Kin's voice rather than a clinician's. The intent is to make the act feel inviting, not assigned.",
+  },
+  {
+    src: "/projects/kinai/sc4.png",
+    title: "Walks that grow the bond",
+    body:
+      "Take Kin on a walk and your route, steps, distance, and time show up in your journal. Time spent moving deepens the bond, which is the only number the app cares about.",
+  },
 ];
 
 const APP_STORE_URL =
@@ -32,19 +52,28 @@ export default function KinaiProjectPage() {
         <p className="font-mono text-xs uppercase tracking-[0.12em] text-[color:var(--color-ink-muted)] mb-6">
           Personal project · iOS · 2026
         </p>
-        <p className="text-lg leading-snug text-[color:var(--color-ink-muted)]">
-          Kinai is an iOS app I built on my own. The whole interface is a small
-          companion who reacts to how you&rsquo;re doing. I wanted to see what
-          a wellness app feels like when the interface is a character instead
-          of a dashboard.
-        </p>
+        <div className="space-y-4 text-lg leading-snug text-[color:var(--color-ink-muted)]">
+          <p>
+            I built Kinai because most wellness apps make me feel worse, not
+            better. They run on streaks, scores, and guilt. Miss a day and
+            you&rsquo;ve broken a 47-day streak, so why bother coming back.
+            That&rsquo;s the opposite of what self-care should feel like.
+          </p>
+          <p>
+            Kinai is a small companion who lives in your phone. The more you
+            take care of yourself, the more your bond with them grows. There
+            are no streaks to lose and no numbers to chase; if you skip a day
+            nothing breaks, and Kin is just glad to see you when you come
+            back.
+          </p>
+        </div>
       </header>
 
       <section className="mb-14">
         <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] mb-6">
           Demo
         </h2>
-        <div className="mx-auto w-full max-w-[260px]">
+        <div className="mx-auto w-full max-w-[240px]">
           <video
             src="/projects/kinai/demo.mp4"
             controls
@@ -58,44 +87,43 @@ export default function KinaiProjectPage() {
       </section>
 
       <section className="mb-14">
-        <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] mb-6">
-          Screens
+        <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] mb-8">
+          Features
         </h2>
-        <div className="-mx-6 px-6 overflow-x-auto">
-          <div className="flex gap-3 pb-2">
-            {screenshots.map((shot) => (
-              <Image
-                key={shot.src}
-                src={shot.src}
-                alt={shot.alt}
-                width={585}
-                height={1266}
-                className="h-[300px] w-auto rounded-[18px] border border-[color:var(--color-rule)] shrink-0"
-              />
-            ))}
-          </div>
-        </div>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-10">
+          {features.map((feature) => (
+            <li key={feature.src} className="flex flex-col">
+              <div className="mb-4">
+                <Image
+                  src={feature.src}
+                  alt={feature.title}
+                  width={585}
+                  height={1266}
+                  className="w-full h-auto rounded-[18px] border border-[color:var(--color-rule)]"
+                />
+              </div>
+              <h3 className="display text-xl leading-tight mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-[color:var(--color-ink-muted)] leading-snug">
+                {feature.body}
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mb-14">
         <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--color-ink-muted)] mb-6">
-          Notes
+          The bond is the only number
         </h2>
-        <ul className="space-y-3 text-[color:var(--color-ink-muted)] leading-snug">
-          <li>
-            Kin has twelve emotional states. An LLM picks one based on the
-            conversation, and the sprite plus background mood update to match.
-          </li>
-          <li>
-            I drew the hero sprite with Imagen 4, then used Gemini Flash with
-            that hero as a reference so the character stays the same across
-            different expressions.
-          </li>
-          <li>
-            The home screen is just the chat. No dashboards, no numbers. Your
-            wellness shows up as the weather around Kin.
-          </li>
-        </ul>
+        <p className="text-[color:var(--color-ink-muted)] leading-snug">
+          Most wellness apps stack metrics on top of the user. Kinai keeps one:
+          the bond level with Kin. Tap the bond pill and you can see exactly
+          what&rsquo;s growing it; no mystery formula, no upsell. The rest of
+          the app stays on your phone. Conversations and check-ins never leave
+          the device.
+        </p>
       </section>
 
       <footer className="pt-8 border-t border-[color:var(--color-rule)]">
