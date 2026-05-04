@@ -24,6 +24,17 @@ const experience = [
   },
 ];
 
+const personalProjects = [
+  {
+    title: "Kinai",
+    tagline: "AI companion pet",
+    blurb:
+      "An iOS app where a small companion responds to how you're doing. Built solo across product, design, and Swift.",
+    href: "/projects/kinai",
+    year: "2026",
+  },
+];
+
 const shipped = [
   {
     title: "Adaptive Plan",
@@ -112,6 +123,33 @@ export default function Home() {
                   </>
                 )}
               </p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section label="Personal projects">
+        <ul className="divide-y divide-[color:var(--color-rule)] -mt-5">
+          {personalProjects.map((item) => (
+            <li key={item.title} className="py-5">
+              <Link href={item.href} className="group block no-underline">
+                <div className="flex items-baseline justify-between gap-6 mb-1">
+                  <h3 className="display text-2xl leading-tight">
+                    <span className="border-b border-transparent group-hover:border-[color:var(--color-ink)] transition-colors">
+                      {item.title}
+                    </span>
+                  </h3>
+                  <span className="font-mono text-xs text-[color:var(--color-ink-subtle)] shrink-0">
+                    {item.year}
+                  </span>
+                </div>
+                <p className="font-mono text-xs uppercase tracking-[0.12em] text-[color:var(--color-ink-muted)] mb-2">
+                  {item.tagline}
+                </p>
+                <p className="text-[color:var(--color-ink-muted)] leading-snug">
+                  {item.blurb}
+                </p>
+              </Link>
             </li>
           ))}
         </ul>
